@@ -22,7 +22,7 @@
 		<c:choose>
 		    <c:when test="${not empty loginNick}">
 		        <div class="user-info font-M">
-		             환영합니다, ${loginNick}님. / <a href="mypage"> 마이페이지 </a> &nbsp;/ <a href="/mainlogout"> 로그아웃 </a>
+		             환영합니다, ${loginNick}님. / <a href="mypage" class="cursorPointer"> 마이페이지 </a> &nbsp;/ <a href="/mainlogout" class="cursorPointer"> 로그아웃 </a>
 		        </div>
 		    </c:when>
 		    <c:otherwise>
