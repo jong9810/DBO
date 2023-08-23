@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import dto.MemberDTO;
 import jakarta.servlet.http.HttpSession;
 import service.HashService;
+import service.MyItemsService;
 import service.MypageService;
 
 @Controller
@@ -24,6 +25,10 @@ public class MypageController {
 	@Autowired
 	@Qualifier("mypageServiceImpl")
 	MypageService service;
+	
+	@Autowired
+	@Qualifier("myItemsServiceImpl")
+	MyItemsService itemservice;
 	
 	@Autowired
 	private HashService hashService;
@@ -162,6 +167,12 @@ public class MypageController {
 		double win_rate = (double) dto.getMember_win() / dto.getMember_total() * 100;
 		
 		List<Map<String, String>> singleRecords = (List<Map<String, String>>) serviceResult.get("singleRecords");
+		
+		//item 적용
+		String items = itemservice.getusingmynickitem(member_id);
+		if (items != null) {
+			mv.addObject("mynickitem", items);
+		}
 		
 		// 뷰에 뿌려줄 데이터
 		mv.addObject("memberDto", dto); // 회원 DTO

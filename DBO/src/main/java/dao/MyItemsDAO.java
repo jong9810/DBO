@@ -19,4 +19,5 @@ public interface MyItemsDAO {
 	public List<MyItemsDTO> getallmynickitem(String member_id);
 	public int onnick(MyItemsDTO dto);
 	public int offnick(MyItemsDTO dto);
+	public String getusingmynickitem(String member_id);
 }

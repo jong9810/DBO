@@ -52,5 +52,10 @@ public class MyItemsServiceImpl implements MyItemsService {
 		return dao.offnick(dto);
 	}
 
+	@Override
+	public String getusingmynickitem(String member_id) {
+		return dao.getusingmynickitem(member_id);
+	}
+
 	
 }

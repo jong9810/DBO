@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import dto.MemberDTO;
-import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class MainController {

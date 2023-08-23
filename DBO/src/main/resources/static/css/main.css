@@ -568,10 +568,6 @@
 	  text-align: center;
 	}
 	
-/*	.rankimage {
-		width: 70%;
-	}*/
-	
 	.rankimage img {
 	  display: block;
 	  margin: auto;
@@ -765,11 +761,17 @@ header {
 }
 
 
+.user-info {
+	text-decoration: none;
+	color:forestgreen;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
 .user-info a {
 	text-decoration: none;
-	color:darkslategray;
+	color:forestgreen;
 	font-weight: bold;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	margin-left: 10px;
 }
 

@@ -99,6 +99,21 @@ public class UserController {
 
 			return "signIn";
 		}
+
+		@RequestMapping("/mainlogout")
+		public String mainlogout(HttpServletResponse response, HttpServletRequest request) {
+			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+			response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+			response.setDateHeader("Expires", 0); // Proxies.
+
+			HttpSession session = request.getSession(false);
+
+			if (session != null) {
+				session.invalidate();
+			}
+
+			return "DBOMain";
+		}
 		
 		//id, email 중복 여부
 	    @RequestMapping(value="/ismemberexist", produces = {"application/json;charset=utf-8"})

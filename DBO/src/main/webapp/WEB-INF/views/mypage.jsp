@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/cursor.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
     <link rel="stylesheet" href="/css/stars.css" />
+    <link href="../css/itemseffect.css" rel="stylesheet" type="text/css" />
     <script src="../js/loading.js"></script>
 		<link href="../css/loading.css" rel="stylesheet" type="text/css" />
   </head>
@@ -37,9 +38,18 @@
             <ul>
               <li>
 	              Lv${member_lv}. 
-	              <div style="display: inline;">
-	              	<span>${memberDto.member_nick}</span>
-	             	</div>
+	              <c:choose>
+	              	<c:when test="${not empty mynickitem}">
+	              		<div style="display: inline;" class="${mynickitem}">
+	              			<span>${memberDto.member_nick}</span>
+	             		</div>
+	              	</c:when>
+	              	<c:otherwise>
+	              		<div style="display: inline;">
+	              			<span>${memberDto.member_nick}</span>
+	             		</div>
+	              	</c:otherwise>
+	              </c:choose>
              	</li>
               <li>소속팀 : ${memberDto.member_team}</li>
               <li>이메일 : ${memberDto.member_email}</li>
@@ -93,7 +103,7 @@
 		            			<td>${memberDto.member_win}회</td>
 		            		</tr>
 		            		<tr>
-		            			<td>총 획득한 경험치</td>
+		            			<td>보유한 경험치</td>
 		            			<td>승률</td>
 		            		</tr>
 		            		<tr>

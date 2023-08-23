@@ -29,6 +29,10 @@
 	<update id="offnick" parameterType="myitemsDto">
 		update nicknameitem set nicknameitem_use = false where member_id = #{member_id} and nicknameitem_name = #{nicknameitem_name};
 	</update>
+	
+	<select id="getusingmynickitem" parameterType="String" resultType="String">
+		select nicknameitem_name from nicknameitem where member_id = #{member_id} and nicknameitem_use = true;
+	</select>
 </mapper>
 
 

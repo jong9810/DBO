@@ -22,7 +22,7 @@
 		<c:choose>
 		    <c:when test="${not empty loginNick}">
 		        <div class="user-info font-M">
-		            환영합니다, ${loginNick} / <a href="mypage"> 마이페이지 </a>
+		             환영합니다, ${loginNick}님. / <a href="mypage"> 마이페이지 </a> &nbsp;/ <a href="/mainlogout"> 로그아웃 </a>
 		        </div>
 		    </c:when>
 		    <c:otherwise>
@@ -43,19 +43,19 @@
 			      	<img src="/img/xbutton.png" class="cursorPointer">
 			    </div>
 			    <div class="modal-content">
-			    	<div class="rankgamebtn">
-				    		<div class="rankimage">
-				    			<a href = "/game?mode=rank" id="rankLink">
-									<img src="/img/modal-button.png/" class="cursorPointer">
-								</a>
-							</div>
-							<div class="ranktext cursorPointer" >
-								<a href = "/game?mode=rank" id="rankLink">
-									랭킹게임
-								</a>
-							</div>
-					
-					</div>
+				    <div class="rankgamebtn">
+				        <div class="rankimage">
+				            <a href="/game?mode=rank" class="cursorPointer" id="rankLinkImage">
+				                <img src="/img/modal-button.png/" class="cursorPointer">
+				            </a>
+				        </div>
+				        
+				        <div class="ranktext cursorPointer" >
+				            <a href="/game?mode=rank" class="cursorPointer" id="rankLinkText">
+				                랭킹게임
+				            </a>
+				        </div>
+				    </div>
 			    	<div class="normalgamebtn">
 			    		<a href = "/game">
 				    		<div class="normalimage">
@@ -104,73 +104,81 @@
 	</main>
   
 	</div>
-  <script>
-    const gameButton = document.querySelector('.main-button.start');
-    const modal = document.getElementById('modal');
-    const closeModalButtons = document.querySelectorAll('.close-modal img'); 
-
-    gameButton.addEventListener('click', () => {
-      modal.style.display = 'block';
-    });
-
-    closeModalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        modal.style.display = 'none';
-      });
-    });
-    
-    const howtoButton = document.querySelector('.main-button.readme');
-    const modal2 = document.getElementById('modal2');
-    const closeModal2Buttons = document.querySelectorAll('.close-modal2 img');
-    
-    howtoButton.addEventListener('click', () => {
-        modal2.style.display = 'block';
-    });
-
-    closeModal2Buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            modal2.style.display = 'none';
-        });
-    });
-    
-    const buttons = [
-    	  { element: document.getElementById('rankingButton'), selectedImageSrc: '/img/rankingbtnselected.png', originalImageSrc: '/img/rankingbtn.png' },
-    	  { element: document.getElementById('howtoButton'), selectedImageSrc: '/img/howtobtnselected.png', originalImageSrc: '/img/howtobtn.png' },
-    	  { element: document.getElementById('startButton'), selectedImageSrc: '/img/startbtnselected.png', originalImageSrc: '/img/startbtn.png' }
-    	];
-
-    	buttons.forEach(button => {
-    	  let isButtonClicked = false;
-
-    	  button.element.addEventListener('mousedown', () => {
-    	    button.element.src = button.selectedImageSrc;
-    	    isButtonClicked = true;
-    	  });
-
-    	  window.addEventListener('mouseup', () => {
-    	    if (isButtonClicked) {
-    	      button.element.src = button.originalImageSrc;
-    	      isButtonClicked = false;
-    	    }
-    	  });
-
-    	  window.addEventListener('mouseout', () => {
-    	    if (isButtonClicked) {
-    	      button.element.src = button.originalImageSrc;
-    	      isButtonClicked = false;
-    	    }
-    	  });
-    	});
-    
-    	const rankLink = document.getElementById('rankLink');
-    	const member_id = '<%= session.getAttribute("member_id") %>';
-
-    	rankLink.addEventListener('click', (event) => {
-    	    if (member_id === null) {
-    	        event.preventDefault();
-    	        alert('로그인 후 이용하실 수 있습니다');
-    	    }
-    	});
-  </script>
+	<script>
+	    const gameButton = document.querySelector('.main-button.start');
+	    const modal = document.getElementById('modal');
+	    const closeModalButtons = document.querySelectorAll('.close-modal img');
+	    const loginNick = "${loginNick}".trim();
+	    
+	    gameButton.addEventListener('click', () => {
+	        modal.style.display = 'block';
+	    });
+	
+	    closeModalButtons.forEach(button => {
+	        button.addEventListener('click', () => {
+	            modal.style.display = 'none';
+	        });
+	    });
+	
+	    const howtoButton = document.querySelector('.main-button.readme');
+	    const modal2 = document.getElementById('modal2');
+	    const closeModal2Buttons = document.querySelectorAll('.close-modal2 img');
+	
+	    howtoButton.addEventListener('click', () => {
+	        modal2.style.display = 'block';
+	    });
+	
+	    closeModal2Buttons.forEach(button => {
+	        button.addEventListener('click', () => {
+	            modal2.style.display = 'none';
+	        });
+	    });
+	
+	    const buttons = [
+	        { element: document.getElementById('rankingButton'), selectedImageSrc: '/img/rankingbtnselected.png', originalImageSrc: '/img/rankingbtn.png' },
+	        { element: document.getElementById('howtoButton'), selectedImageSrc: '/img/howtobtnselected.png', originalImageSrc: '/img/howtobtn.png' },
+	        { element: document.getElementById('startButton'), selectedImageSrc: '/img/startbtnselected.png', originalImageSrc: '/img/startbtn.png' }
+	    ];
+	
+	    buttons.forEach(button => {
+	        let isButtonClicked = false;
+	
+	        button.element.addEventListener('mousedown', () => {
+	            button.element.src = button.selectedImageSrc;
+	            isButtonClicked = true;
+	        });
+	
+	        window.addEventListener('mouseup', () => {
+	            if (isButtonClicked) {
+	                button.element.src = button.originalImageSrc;
+	                isButtonClicked = false;
+	            }
+	        });
+	
+	        window.addEventListener('mouseout', () => {
+	            if (isButtonClicked) {
+	                button.element.src = button.originalImageSrc;
+	                isButtonClicked = false;
+	            }
+	        });
+	    });
+	
+	    const rankLinkImage = document.getElementById('rankLinkImage');
+	    const rankLinkText = document.getElementById('rankLinkText');
+	
+	    rankLinkImage.addEventListener('click', (event) => {
+	        if (loginNick === "") {
+	            event.preventDefault(); // 링크 동작을 취소
+	            alert('로그인 후에 이용하실 수 있습니다.');
+	        }
+	    });
+	
+	    rankLinkText.addEventListener('click', (event) => {
+	        if (loginNick === "") {
+	            event.preventDefault(); // 링크 동작을 취소
+	            alert('로그인 후에 이용하실 수 있습니다.');
+	        }
+	    });
+	</script>
 </body>
 </html>
