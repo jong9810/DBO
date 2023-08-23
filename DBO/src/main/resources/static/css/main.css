@@ -1,0 +1,816 @@
+@charset "UTF-8";
+
+/* 큰 데스크탑 화면 (해상도 2080px ~ */
+@media all and (min-width:2080px) {
+
+	.buttons {
+		display: flex;
+		margin-top: 20px;
+	}
+	
+	.main-button {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		margin: 50px 50px;
+	}
+
+	.main-button img {
+		width: 110%;
+	}
+	
+	.textinbtn {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 90%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'NeoDGM';
+		color: white;
+	}
+	
+	.logoimg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 0;
+		font-weight: bold;
+		overflow: hidden;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		animation: fade-in 1.5s ease-in-out forwards;
+	}
+	
+	@keyframes fade-in {
+		0% {
+			font-size: 0;
+			opacity: 0;
+		}
+	
+		100% {
+			font-size: 80px;
+			opacity: 1;
+		}
+	}
+	
+	.modal {
+		width: 70%;
+		height: 70%;
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	    background-image: url('/img/modal-readme.png');
+	    background-size: contain; 
+	    background-repeat: no-repeat;
+	    background-position: center;
+		z-index: 9999;
+	}
+	
+	.modal-content {
+		text-align: center;
+		
+	}
+	
+	.modal-content img {
+		width: 55%;
+		height: 45%;
+		padding: 7px;
+	}
+	
+	.close-modal {
+		width: 92%;
+		height: 35px;
+		position: block;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.close-modal img {
+		width: 35px;
+		height: 35px;
+		margin: 10px;
+	}
+	
+	.modal2 {
+		width: 80%;
+		height: 80%;
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	    background-image: url('/img/howtoboard.png');
+	    background-size: contain; 
+	    background-repeat: no-repeat;
+	    background-position: center;
+		z-index: 9999;
+	}
+	
+	.close-modal2 {
+		width: 94%;
+		height: 20px;
+		position: block;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.close-modal2 img {
+		width: 35px;
+		height: 35px;
+		margin : 15px;
+	}
+	
+	.modal2-content {
+		width: 70%;
+		height: 100%;
+		position: relative;	
+        margin: 10px auto; 
+        text-align: center; 
+	}
+	
+	.howtotitle {
+	  position: absolute;
+	  top: 12%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 50px;
+	  font-weight: bold;
+	  color: yellow;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.howtotext {
+		position: absolute;
+		top : 23%;
+		font-size: 30px;
+		text-align: left;
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.normalgamebtn {
+	  display: block;
+	  position: relative;
+	}
+	
+	.normalimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.normaltext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 50px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.rankgamebtn {
+	  display: block;
+	  position: relative;
+	  text-align: center;
+	  margin-top : 120px;
+	}
+	
+	.rankimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.ranktext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 50px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+}
+
+/* 테블릿 세로 (해상도 768px ~ 1279px)*/ 
+@media all and (min-width:768px) and (max-width:1279px) { 
+
+	.buttons {
+		display: flex;
+		margin-top: 10px;
+	}
+	
+	.main-button {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+	}
+
+	.main-button img {
+		width: 60%;
+	}
+	
+	.textinbtn {
+		position: absolute;
+		top: 0;
+		left: 37px;
+		width: 60%;
+		height: 90%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'NeoDGM';
+		color: white;
+	}
+	
+	.logoimg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}	
+	
+	.logoimg img {
+	height: 200px;
+}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 0;
+		font-weight: bold;
+		overflow: hidden;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		animation: fade-in 1.5s ease-in-out forwards;
+	}
+	
+	@keyframes fade-in {
+		0% {
+			font-size: 0;
+			opacity: 0;
+		}
+	
+		100% {
+			font-size: 40px;
+			opacity: 1;
+		}
+	}
+	
+	.modal {
+		width: 70%;
+		height: 70%;
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	    background-image: url('/img/modal-readme.png');
+	    background-size: contain; 
+	    background-repeat: no-repeat;
+	    background-position: center;
+		z-index: 9999;
+	}
+	
+	.modal-content {
+		text-align: center;
+		margin-top: 35px;
+	}
+	
+	.modal-content img {
+		width: 55%;
+		height: 45%;
+		padding: 7px;
+	}
+	
+	.close-modal {
+		width: 92%;
+		height: 20px;
+		position: block;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.close-modal img {
+		width: 15px;
+		height: 15px;
+		margin: 10px;
+	}
+	
+	.normalgamebtn {
+	  display: block;
+	  position: relative;
+	}
+	
+	.normalimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.normaltext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 30px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.rankgamebtn {
+	  display: block;
+	  position: relative;
+	  text-align: center;
+	}
+	
+	.rankimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.ranktext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 30px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+
+}
+
+@media all and (min-width:1280px) and (max-width: 2079px) { 
+
+	.buttons {
+		display: flex;
+		margin-top: 20px;
+	}
+	
+	.main-button {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		margin: 15px 15px;
+	}
+
+	.main-button img {
+		width: 100%;
+	}
+	
+	.textinbtn {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 90%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'NeoDGM';
+		color: white;
+	}
+
+	.logoimg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logoimg img {
+	height: 280px;
+}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 0;
+		font-weight: bold;
+		overflow: hidden;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		animation: fade-in 1.5s ease-in-out forwards;
+	}
+	
+	@keyframes fade-in {
+		0% {
+			font-size: 0;
+			opacity: 0;
+		}
+	
+		100% {
+			font-size: 60px;
+			opacity: 1;
+		}
+	}
+	
+	.modal {
+		width: 70%;
+		height: 70%;
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	    background-image: url('/img/modal-readme.png');
+	    background-size: contain; 
+	    background-repeat: no-repeat;
+	    background-position: center;
+		z-index: 9999;
+	}
+	
+	.modal-content {
+		text-align: center;
+		margin-top : 75px;
+	}
+	
+	.modal-content img {
+		width: 55%;
+		height: 45%;
+		padding: 7px;
+	}
+	
+	.close-modal {
+		width: 92%;
+		height: 20px;
+		position: block;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.close-modal img {
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+	}
+
+	.modal2 {
+		width: 80%;
+		height: 80%;
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	    background-image: url('/img/howtoboard.png');
+	    background-size: contain; 
+	    background-repeat: no-repeat;
+	    background-position: center;
+		z-index: 9999;
+	}
+	
+	.close-modal2 {
+		width: 94%;
+		height: 20px;
+		position: block;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.close-modal2 img {
+		width: 20px;
+		height: 20px;
+		margin : 15px;
+	}
+	
+	.modal2-content {
+		width: 70%;
+		height: 100%;
+		position: relative;	
+        margin: 10px auto; 
+        text-align: center; 
+	}
+	
+	.howtotitle {
+	  position: absolute;
+	  top: 12%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 35px;
+	  font-weight: bold;
+	  color: yellow;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.howtotext {
+		position: absolute;
+		top : 23%;
+		font-size: 20px;
+		text-align: left;
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.normalgamebtn {
+	  display: block;
+	  position: relative;
+	}
+	
+	.normalimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.normaltext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 35px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.rankgamebtn {
+	  display: block;
+	  position: relative;
+	  text-align: center;
+	}
+	
+/*	.rankimage {
+		width: 70%;
+	}*/
+	
+	.rankimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.ranktext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 35px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 767px)*/ 
+@media all and (max-width:767px) {
+
+	.buttons {
+		display: block;
+		/*margin-top: 20px;*/
+	}
+	
+	.main-button {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		margin: 15px 15px;
+	}
+
+	.main-button img {
+		width: 60%;
+	}
+	
+	.textinbtn {
+		position: absolute;
+		top: 0;
+		left: 50;
+		width: 60%;
+		height: 90%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'NeoDGM';
+		color: white;
+	}
+	
+	.logoimg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logoimg img {
+	height: 120px;
+}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 0;
+		font-weight: bold;
+		overflow: hidden;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		animation: fade-in 1.5s ease-in-out forwards;
+	}
+	
+	@keyframes fade-in {
+		0% {
+			font-size: 0;
+			opacity: 0;
+		}
+	
+		100% {
+			font-size: 30px;
+			opacity: 1;
+		}
+	}
+	
+	.modal {
+		width: 100%;
+		height: 50%;
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	    background-image: url('/img/modal-readme.png');
+	    background-size: contain; 
+	    background-repeat: no-repeat;
+	    background-position: center;
+		z-index: 9999;
+	}
+	
+	.modal-content {
+		text-align: center;
+		margin-top: 18px;
+	}
+	
+	.modal-content img {
+		width: 70%;
+		height: 70%;
+		padding: 7px;
+	}
+	
+	.close-modal {
+		margin-top: 25px;
+		width: 98%;
+		position: block;
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	.close-modal img {
+		width: 10px;
+		height: 10px;
+	}
+	
+	.normalgamebtn {
+	  display: block;
+	  position: relative;
+	}
+	
+	.normalimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.normaltext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 20px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	
+	.rankgamebtn {
+	  display: block;
+	  position: relative;
+	  text-align: center;
+	}
+	
+	.rankimage img {
+	  display: block;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	
+	.ranktext {
+	  position: absolute;
+	  top: 50%; /* 텍스트를 세로 중앙에 위치시킴 */
+	  left: 50%; /* 텍스트를 가로 중앙에 위치시킴 */
+	  transform: translate(-50%, -50%); /* 위치 조절 */
+	  text-align: center;
+	  font-size: 20px;
+	  font-weight: bold;
+	  color: white;
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+}
+
+body {
+	height: 100vh;
+}
+
+header {
+	width: 100%;
+	background-color: #afea47;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.thelogo {
+	display: block;
+}
+
+
+.user-info a {
+	text-decoration: none;
+	color:darkslategray;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	margin-left: 10px;
+}
+
+main {
+	display: relative;
+	width: 100%;
+	height: 95%;
+}
+
+.main-background {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.main-background::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('/img/baseballfield.png');
+	background-size: cover;
+	background-position: center 45%;
+	filter: brightness(0.9);
+	z-index: -1;
+}
+
+.rankgamebtn:hover .rankimage img,
+.normalgamebtn:hover .normalimage img {
+  filter: brightness(1.2);
+}
+
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+

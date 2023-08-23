@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@font-face {
+	font-family: 'NeoDGM';
+	src: url('/fonts/neodgm.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'NeoDGM';
+}
+body {
+  margin: 0 auto;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrapper {
+  background-color: efefef;
+}
+
+@media all {
+	body {
+  	width: 1920px;
+  }
+  .wrapper{
+	  width: 1416px;
+	  height: 825px;
+  }
+  .font-XL {
+  	font-size: 40px;
+  }
+  .font-L {
+  	font-size: 25px;
+  }
+  .font-M {
+  	font-size: 20px;
+  }
+  .font-S {
+  	font-size: 15px;
+  }
+}
+
+.btns {
+  background: #c1ec42;
+  border: 0px;
+  position: relative;
+  box-shadow: 
+    inset -2px 2px 1px 1px #d5ee99,
+    inset -2px -2px 1px 1px #537726,
+    inset 2px 0px 1px 1px #7abc69
+    
+}
+
+.btns:active {
+  top: 2px;
+}
+
+.btns::after {
+  content: '';
+  background: #000;
+  position: absolute;
+  left: -2%;
+  top: 0;
+  width: 104%;
+  height: 100%;
+  z-index: -1
+}
+
+.btns::before {
+  content: '';
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 110%;
+  z-index: -2
+}
+
+.btns:focus {
+	border: none;
+	outline: none;
+}
+
+
+@media all and (min-width:2080px) { 
+  body {
+  	width: 1920px;
+  }
+  .wrapper{
+	  width: 1416px;
+	  height: 825px;
+  }
+  .font-XL {
+  	font-size: 40px;
+  }
+  .font-L {
+  	font-size: 25px;
+  }
+  .font-M {
+  	font-size: 20px;
+  }
+  .font-S {
+  	font-size: 15px;
+  }
+} 
+
+@media all and (min-width:1280px) and (max-width: 2079px) { 
+  body {
+  	width: 1320px;
+  }
+  .wrapper{
+	  width: 973.5px;
+	  height: 567.2px;
+  }
+  .font-XL {
+  	font-size: 27.5px;
+  }
+  .font-L {
+  	font-size: 17.2px;
+  }
+  .font-M {
+  	font-size: 13.8px;
+  }
+  .font-S {
+  	font-size: 12px;
+  }
+}
+
+@media all and (min-width:768px) and (max-width:1279px) { 
+	body {
+  	width: 840px;
+  }
+  .wrapper{
+	  width: 619.5px;
+	  height: 360.9px;
+  }
+  .font-XL {
+  	font-size: 17.5px;
+  }
+  .font-L {
+  	font-size: 11px;
+  }
+  .font-M {
+  	font-size: 8.8px;
+  }
+  .font-S {
+  	font-size: 6.6px;
+  }
+}
+
+@media all and (max-width:767px) {
+  body {
+  	width: 600px;
+  }
+  .wrapper{
+	  width: 257.8px;
+	  height: 442.5px;
+  }
+  .font-XL {
+  	font-size: 12.5px;
+  }
+  .font-L {
+  	font-size: 7.8px;
+  }
+  .font-M {
+  	font-size: 6px;
+  }
+  .font-S {
+  	font-size: 4.7px;
+  }
+}

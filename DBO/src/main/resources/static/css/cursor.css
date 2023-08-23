@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+* {
+	cursor: url('../img/Sprite-cursor0001.cur'), default;
+}
+
+.cursorPointer:hover {
+	cursor: url('../img/Sprite-cursorPointer0001.cur'), pointer;
+	-webkit-animation: cursor 400ms infinite;
+  	animation: cursor 400ms infinite;
+}
+
+@-webkit-keyframes cursor {
+  0% {cursor: url('../img/Sprite-cursorPointer0001.cur'), pointer;}
+  25% {cursor: url('../img/Sprite-cursorPointer0002.cur'), pointer;}
+  50% {cursor: url('../img/Sprite-cursorPointer0003.cur'), pointer;}
+  75% {cursor: url('../img/Sprite-cursorPointer0004.cur'), pointer;}
+  100% {cursor: url('../img/Sprite-cursorPointer0001.cur'), pointer;}
+} 
+
+@keyframes cursor {
+  0% {cursor: url('../img/Sprite-cursorPointer0001.cur'), pointer;}
+  25% {cursor: url('../img/Sprite-cursorPointer0002.cur'), pointer;}
+  50% {cursor: url('../img/Sprite-cursorPointer0003.cur'), pointer;}
+  75% {cursor: url('../img/Sprite-cursorPointer0004.cur'), pointer;}
+  100% {cursor: url('../img/Sprite-cursorPointer0001.cur'), pointer;}
+}
+

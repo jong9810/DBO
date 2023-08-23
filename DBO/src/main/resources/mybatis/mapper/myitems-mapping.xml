@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MyItemsDAO">
+	<insert id="buyitem" parameterType="myitemsDto">
+		insert into nicknameitem values (#{member_id}, #{nicknameitem_name}, false, default);
+	</insert>
+	
+	<select id="getsolditem" parameterType="String">
+		select nicknameitem_name from nicknameitem where member_id = #{member_id};
+	</select>
+	
+	<update id="minusexp" parameterType="memberDto">
+		update member set member_allexp = member_allexp - #{member_allexp} where member_id = #{member_id};
+	</update>
+	
+	<select id="getexp" parameterType="String">
+		select member_allexp from member where member_id = #{member_id};
+	</select>
+	
+	<select id="getallmynickitem" parameterType="String" resultType="myitemsDto">
+		select * from nicknameitem where member_id = #{member_id};
+	</select>
+	
+	<update id="onnick" parameterType="myitemsDto">
+		update nicknameitem set nicknameitem_use = true where member_id = #{member_id} and nicknameitem_name = #{nicknameitem_name};
+	</update>
+	
+	<update id="offnick" parameterType="myitemsDto">
+		update nicknameitem set nicknameitem_use = false where member_id = #{member_id} and nicknameitem_name = #{nicknameitem_name};
+	</update>
+</mapper>
+
+
+
+
+
+

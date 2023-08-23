@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.RankingDAO">
+
+	<select id="getWeekelyRanking" parameterType="hashmap"
+		resultType="rankingDto">
+		SELECT e.member_id, m.member_nick, ni.nicknameitem_name, SUM(e.exp_amount)
+		AS exp_total
+		FROM exp AS e
+		JOIN member AS m ON e.member_id = m.member_id
+		LEFT JOIN (
+		SELECT DISTINCT member_id, nicknameitem_name
+		FROM nicknameitem
+		WHERE nicknameitem_use = true
+		) AS ni ON e.member_id = ni.member_id
+		where e.exp_date <![CDATA[>=]]>
+		#{firstDayOfWeek} AND
+		e.exp_date <![CDATA[<]]>
+		DATE_ADD(#{lastDayOfWeek}, INTERVAL 1 DAY) 
+		GROUP BY e.member_id, m.member_nick, ni.nicknameitem_name
+		ORDER BY exp_total DESC
+		LIMIT 10;
+	</select>
+
+</mapper>
+
+
+
+
+
+

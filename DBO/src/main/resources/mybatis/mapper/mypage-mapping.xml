@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MypageDAO">
+
+<!-- 회원의 현재 정보 가져오기 -->
+<select id="selectMemberInfo" parameterType="String" resultType="memberDto">
+	select member_nick, member_email, member_allexp, member_total, member_win, member_team from member
+	where member_id = #{member_id}
+</select>
+
+<!-- 닉네임 변경 -->
+<update id="updateMemberNick" parameterType="memberDto">
+	update member set member_nick = #{member_nick}
+	where member_id = #{member_id}
+</update>
+
+<!-- 비밀번호 변경 -->
+<update id="updateMemberPw" parameterType="memberDto">
+	update member set member_pw = #{member_pw}
+	where member_id = #{member_id}
+</update>
+
+<!-- 회원의 현재 비밀번호 가져오기 -->
+<select id="selectMemberCurPw" parameterType="String">
+	select member_pw from member
+	where member_id = #{member_id}
+</select>
+
+<!-- 회원탈퇴 처리 -->
+<update id="deleteMember" parameterType="map">
+	update member set
+	member_id = #{hash_member_id},
+	member_pw = #{hash_member_pw},
+	member_nick = "탈퇴회원",
+	member_email = "탈퇴회원",
+	member_team = null
+	where member_id = #{member_id}
+</update>
+
+<!-- 회원이 경험치를 얻은(0포함) 최근 5개 게임id, 날짜 얻기 -->
+<select id="selectLatestExps" parameterType="String" resultType="expDto">
+	select single_id, exp_date from exp 
+	where member_id = #{member_id}
+	order by exp_date desc, single_id desc
+	limit 5
+</select>
+ 
+<!-- 회원의 최근 5게임 성공여부, 총 진행 횟수 얻기-->
+<select id="selectLatestSingleRecords" parameterType="hashmap" resultType="singleDto">
+ 	select single_result, single_all, single_answer from single
+ 	where member_id = #{member_id} and
+ 	single_id in 
+ 	(<foreach collection="single_ids" separator="," item="single_id">
+	 	#{single_id}
+ 	</foreach>)
+ 	order by single_id desc;
+</select>
+
+<!-- 최근 5게임 상세 내용 조회하기 -->
+<select id="selectLatestInnings" parameterType="int" resultType="inningsDto">
+	select innings_count, innings_strike, innings_ball, innings_chall from innings
+	where single_id = #{single_id}
+	order by single_id desc;
+</select>
+
+</mapper>
+
+
+
+
+
+

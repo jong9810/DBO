@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'NeoDGM';
+    src: url('/fonts/neodgm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#pixelAlert {
+	font-family: 'NeoDGM';
+    width: 26.875rem;
+    height: 9.375rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    border: 10px groove #767474;
+    padding: 1rem;
+    text-align: center;
+    z-index: 999;
+}
+
+#loginAlert {
+	font-family: 'NeoDGM';
+    width: 26.875rem;
+    height: 9.375rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    border: 10px groove #767474;
+    padding: 1rem;
+    text-align: center;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.alert-content {
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    width: 2.5rem; /* 버튼의 너비를 조정 */
+    height: 2.5rem; /* 버튼의 높이를 조정 */
+    padding: 0; /* 패딩 제거 */
+}
+
+/* h2 {
+    color: #f0f;
+    margin-bottom: 10px;
+} */
+
+#pixelAlert > p {
+    margin-bottom: 0.625rem;
+    margin-top: 1.25rem;
+    color: red;
+}
+
+#loginAlert > p {
+	margin-bottom: 0.625rem;
+    margin-top: 1.25rem;
+    color: #39FF14;
+}

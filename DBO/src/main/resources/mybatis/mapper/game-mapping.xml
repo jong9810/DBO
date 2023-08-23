@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.GameDAO">
+<insert id="insertSingle" parameterType="singleDto">
+	insert into single
+	(
+		member_id,
+		single_all,
+		single_result,
+		single_answer 
+	)
+	values 
+	(
+		#{member_id}, 
+		#{single_all}, 
+		#{single_result},
+		#{single_answer}  
+	)
+	<selectKey resultType="int" keyProperty="single_id" order="AFTER">
+        SELECT LAST_INSERT_ID()
+    </selectKey>
+</insert>
+
+<update id="updateSingle" parameterType="singleDto">
+	update single set single_all = #{single_all}, single_result = #{single_result}, single_answer = #{single_answer}
+	where single_id = #{single_id}
+</update>
+
+<update id="updateMember" parameterType="memberDto">
+	update member set member_allexp = #{member_allexp}, member_total = #{member_total}, member_win = #{member_win}
+	where member_id = #{member_id}
+</update>
+
+<insert id="insertInnings" parameterType="inningsDto">
+	insert into innings
+	(
+		single_id,
+		innings_count,
+		innings_strike,
+		innings_ball,
+		innings_chall 
+	)
+	values 
+	(
+		#{single_id}, 
+		#{innings_count}, 
+		#{innings_strike},
+		#{innings_ball},
+		#{innings_chall}
+	)
+</insert>
+<insert id="insertExp" parameterType="expDto">
+	insert into exp
+	(
+		member_id,
+		exp_amount,
+		single_id
+	)
+	values 
+	(
+		#{member_id}, 
+		#{exp_amount}, 
+		#{single_id}
+	)
+</insert>
+<select id="selectMember" resultType="memberDto"  parameterType="String">
+select * from member where member_id = #{member_id}
+</select>
+</mapper>
+
+
+
+
+
+
